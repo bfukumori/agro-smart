@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/agrosmart_esp32.ino.bin"
+elf = "build/agrosmart_esp32.ino.elf"

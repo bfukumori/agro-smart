@@ -1,0 +1,14 @@
+.chrome-*
+.edge-*
+tmp/
+output/
+tools/
+tests/
+docs/
+evidencias/
+simulator/
+__pycache__/
+*.pyc
+*.docx
+*.pdf
+*.zip

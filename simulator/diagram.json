@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Equipe AgroSmart",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -4.8, "left": 4.8, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -105.6, "left": -120, "attrs": { "temperature": "29", "humidity": "48" } },
+    { "type": "wokwi-potentiometer", "id": "soil", "top": 115.2, "left": -124.8, "attrs": { "value": "650" } },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr", "top": 120, "left": 172.8, "attrs": { "lux": "65000" } }
+  ],
+  "connections": [
+    [ "dht:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "dht:SDA", "esp:15", "green", [ "v0" ] ],
+    [ "soil:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "soil:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "soil:SIG", "esp:34", "blue", [ "v0" ] ],
+    [ "ldr:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "ldr:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ldr:AO", "esp:35", "yellow", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

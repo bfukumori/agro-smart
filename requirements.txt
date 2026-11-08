@@ -1,0 +1,10 @@
+# Dependências da Plataforma AgroSmart - Fase 7
+
+# A aplicação de core runtime utiliza a biblioteca padrão do Python 3.11+.
+# As ferramentas de auditoria DevSecOps, geração de artefatos e apresentações utilizam:
+flake8>=7.0.0
+bandit>=1.7.0
+matplotlib>=3.8.0
+pillow>=10.0.0
+python-docx>=1.1.0
+python-pptx>=1.0.0

@@ -1,0 +1,90 @@
+=======================================================================
+         RELATÓRIO DE EXECUÇÃO DO PIPELINE DEVSECOPS - AGROSMART       
+=======================================================================
+Data/Hora UTC: 2026-10-30T22:00:41.628730+00:00Z
+Duração da Execução: 1.10 segundos
+Resultado Geral: APROVADO (PASSED)
+=======================================================================
+
+[1] ETAPA: Qualidade de Código (Linting)
+Ferramenta: flake8
+Comando: flake8 src tests --max-line-length=120
+Status: SUCESSO
+Log de Saída:
+--------------------------------------------------
+Nenhum desvio detectado. Código 100% conforme PEP8.
+--------------------------------------------------
+
+[2] ETAPA: Segurança de Código (SAST)
+Ferramenta: bandit
+Comando: bandit -r src
+Status: SUCESSO
+Log de Saída:
+--------------------------------------------------
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	running on Python 3.13.16
+Run started:2026-10-30 22:00:42.267112+00:00
+
+Test results:
+	No issues identified.
+
+Code scanned:
+	Total lines of code: 711
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 1
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 0
+Files skipped (0):
+--------------------------------------------------
+
+[3] ETAPA: Testes Unitários e Integrados
+Ferramenta: unittest
+Comando: python -m unittest discover -s tests -v
+Status: SUCESSO
+Log de Saída:
+--------------------------------------------------
+test_combined_heat_and_drought_is_critical (test_pipeline.AgroSmartPipelineTests.test_combined_heat_and_drought_is_critical) ... ok
+test_health_monitoring_metrics (test_pipeline.AgroSmartPipelineTests.test_health_monitoring_metrics) ... ok
+test_irrigation_is_triggered_for_dry_soil_without_rain (test_pipeline.AgroSmartPipelineTests.test_irrigation_is_triggered_for_dry_soil_without_rain) ... ok
+test_process_mining_event_log_and_variants (test_pipeline.AgroSmartPipelineTests.test_process_mining_event_log_and_variants) ... ok
+test_rain_forecast_postpones_irrigation (test_pipeline.AgroSmartPipelineTests.test_rain_forecast_postpones_irrigation) ... ok
+test_simulator_output_passes_validation (test_pipeline.AgroSmartPipelineTests.test_simulator_output_passes_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+--------------------------------------------------
+
+[4] ETAPA: Auditoria de IaC e Container Hardening
+Ferramenta: Docker Security Auditor
+Comando: Auditoria de regras CIS Docker Benchmark
+Status: SUCESSO
+Log de Saída:
+--------------------------------------------------
+- Dockerfile: Encontrado (1017 bytes)
+- Usuário não-root (Least Privilege): APROVADO
+- Instrução HEALTHCHECK embutida: APROVADO
+- Docker Compose: Encontrado com limites de recursos: APROVADO
+--------------------------------------------------
+
+=======================================================================
+CONCLUSÃO DA AUDITORIA DEVSECOPS:
+Todas as 4 etapas foram concluídas com sucesso. O software atende aos
+padrões de qualidade de código (PEP8), não apresenta vulnerabilidades
+conhecidas de severidade alta/média no código SAST, passou em 100% dos
+testes unitários e possui configurações seguras de container.
+=======================================================================

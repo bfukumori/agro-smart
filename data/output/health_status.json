@@ -1,0 +1,36 @@
+{
+  "status": "HEALTHY",
+  "timestamp": "2026-10-30T21:52:45.540311Z",
+  "version": "1.0.0-fase7",
+  "service": "agrosmart-core-engine",
+  "uptime_seconds": 1365726.94,
+  "kpis": {
+    "total_readings_processed": 144,
+    "data_quality_compliance_pct": 100.0,
+    "active_alerts_count": 2,
+    "rejected_records_count": 0,
+    "processing_latency_ms": 153.62,
+    "throughput_readings_per_sec": 937.39
+  },
+  "subsystems": {
+    "iot_edge_gateway": {
+      "status": "ONLINE",
+      "protocol": "MQTT/Serial JSON",
+      "latency_ms": 12.4
+    },
+    "data_pipeline": {
+      "status": "ONLINE",
+      "mode": "Batch/Micro-batch",
+      "errors": 0
+    },
+    "rule_decision_engine": {
+      "status": "ONLINE",
+      "rules_active": 5,
+      "accuracy_pct": 100.0
+    },
+    "dashboard_http_server": {
+      "status": "ONLINE",
+      "port": 8080
+    }
+  }
+}

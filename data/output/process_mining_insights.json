@@ -1,0 +1,166 @@
+{
+  "total_cases_analyzed": 144,
+  "total_events": 950,
+  "distinct_activities": 11,
+  "distinct_variants": 5,
+  "avg_case_lead_time_ms": 736.77,
+  "variants": [
+    {
+      "variant_id": "VAR-01",
+      "trace": "Coleta_Sensor_Borda -> Ingestao_Buffer_Raw -> Validacao_Qualidade_Dados -> Avaliacao_Risco_Agronomico -> Decisao_Conformidade_Padrao -> Publicacao_Dashboard_Analytics",
+      "frequency": 58,
+      "percentage": 40.3
+    },
+    {
+      "variant_id": "VAR-02",
+      "trace": "Coleta_Sensor_Borda -> Ingestao_Buffer_Raw -> Validacao_Qualidade_Dados -> Avaliacao_Risco_Agronomico -> Decisao_Alerta_Monitoramento -> Publicacao_Dashboard_Analytics -> Notificacao_Operador_Agronomico",
+      "frequency": 48,
+      "percentage": 33.3
+    },
+    {
+      "variant_id": "VAR-03",
+      "trace": "Coleta_Sensor_Borda -> Ingestao_Buffer_Raw -> Validacao_Qualidade_Dados -> Avaliacao_Risco_Agronomico -> Decisao_Ativar_Irrigacao -> Publicacao_Dashboard_Analytics -> Notificacao_Operador_Agronomico",
+      "frequency": 26,
+      "percentage": 18.1
+    },
+    {
+      "variant_id": "VAR-04",
+      "trace": "Coleta_Sensor_Borda -> Ingestao_Buffer_Raw -> Validacao_Qualidade_Dados -> Avaliacao_Risco_Agronomico -> Decisao_Adiar_Irrigacao_Chuva -> Publicacao_Dashboard_Analytics -> Notificacao_Operador_Agronomico",
+      "frequency": 7,
+      "percentage": 4.9
+    },
+    {
+      "variant_id": "VAR-05",
+      "trace": "Coleta_Sensor_Borda -> Ingestao_Buffer_Raw -> Validacao_Qualidade_Dados -> Avaliacao_Risco_Agronomico -> Decisao_Alerta_Estresse_Termico -> Publicacao_Dashboard_Analytics -> Notificacao_Operador_Agronomico",
+      "frequency": 5,
+      "percentage": 3.5
+    }
+  ],
+  "activity_durations_ms": {
+    "Coleta_Sensor_Borda": 120.0,
+    "Ingestao_Buffer_Raw": 180.0,
+    "Validacao_Qualidade_Dados": 75.0,
+    "Avaliacao_Risco_Agronomico": 95.0,
+    "Decisao_Conformidade_Padrao": 40.0,
+    "Publicacao_Dashboard_Analytics": 65.0,
+    "Decisao_Alerta_Monitoramento": 90.0,
+    "Notificacao_Operador_Agronomico": 150.0,
+    "Decisao_Alerta_Estresse_Termico": 85.0,
+    "Decisao_Ativar_Irrigacao": 320.0,
+    "Decisao_Adiar_Irrigacao_Chuva": 110.0
+  },
+  "transitions": [
+    {
+      "from": "Coleta_Sensor_Borda",
+      "to": "Ingestao_Buffer_Raw",
+      "count": 144,
+      "avg_latency_ms": 250.0
+    },
+    {
+      "from": "Ingestao_Buffer_Raw",
+      "to": "Validacao_Qualidade_Dados",
+      "count": 144,
+      "avg_latency_ms": 190.0
+    },
+    {
+      "from": "Validacao_Qualidade_Dados",
+      "to": "Avaliacao_Risco_Agronomico",
+      "count": 144,
+      "avg_latency_ms": 80.0
+    },
+    {
+      "from": "Publicacao_Dashboard_Analytics",
+      "to": "Notificacao_Operador_Agronomico",
+      "count": 86,
+      "avg_latency_ms": 70.0
+    },
+    {
+      "from": "Avaliacao_Risco_Agronomico",
+      "to": "Decisao_Conformidade_Padrao",
+      "count": 58,
+      "avg_latency_ms": 100.0
+    },
+    {
+      "from": "Decisao_Conformidade_Padrao",
+      "to": "Publicacao_Dashboard_Analytics",
+      "count": 58,
+      "avg_latency_ms": 40.0
+    },
+    {
+      "from": "Avaliacao_Risco_Agronomico",
+      "to": "Decisao_Alerta_Monitoramento",
+      "count": 48,
+      "avg_latency_ms": 100.0
+    },
+    {
+      "from": "Decisao_Alerta_Monitoramento",
+      "to": "Publicacao_Dashboard_Analytics",
+      "count": 48,
+      "avg_latency_ms": 90.0
+    },
+    {
+      "from": "Avaliacao_Risco_Agronomico",
+      "to": "Decisao_Ativar_Irrigacao",
+      "count": 26,
+      "avg_latency_ms": 100.0
+    },
+    {
+      "from": "Decisao_Ativar_Irrigacao",
+      "to": "Publicacao_Dashboard_Analytics",
+      "count": 26,
+      "avg_latency_ms": 320.0
+    },
+    {
+      "from": "Avaliacao_Risco_Agronomico",
+      "to": "Decisao_Adiar_Irrigacao_Chuva",
+      "count": 7,
+      "avg_latency_ms": 100.0
+    },
+    {
+      "from": "Decisao_Adiar_Irrigacao_Chuva",
+      "to": "Publicacao_Dashboard_Analytics",
+      "count": 7,
+      "avg_latency_ms": 110.0
+    },
+    {
+      "from": "Avaliacao_Risco_Agronomico",
+      "to": "Decisao_Alerta_Estresse_Termico",
+      "count": 5,
+      "avg_latency_ms": 100.0
+    },
+    {
+      "from": "Decisao_Alerta_Estresse_Termico",
+      "to": "Publicacao_Dashboard_Analytics",
+      "count": 5,
+      "avg_latency_ms": 85.0
+    }
+  ],
+  "bottlenecks": [
+    {
+      "activity": "Ingestao_Buffer_Raw",
+      "avg_duration_ms": 180.0,
+      "severity": "MEDIO",
+      "cause": "Latência de I/O em leitura sequencial síncrona de CSV em lote.",
+      "recommendation": "Adotar fila assíncrona (RabbitMQ/MQTT Broker) para processamento em streaming."
+    },
+    {
+      "activity": "Decisao_Ativar_Irrigacao",
+      "avg_duration_ms": 320.0,
+      "severity": "ALTO",
+      "cause": "Handshake e confirmação com atuadores físicos de válvula solenóide.",
+      "recommendation": "Implementar protocolo de confirmação assíncrona com timeout e circuit breaker."
+    },
+    {
+      "activity": "Notificacao_Operador_Agronomico",
+      "avg_duration_ms": 150.0,
+      "severity": "BAIXO",
+      "cause": "Serialização de payloads múltiplos de alerta e envio para múltiplos canais.",
+      "recommendation": "Agrupamento de alertas (alert bundling) por janela temporal de 5 minutos."
+    }
+  ],
+  "opportunities": [
+    "Transição de processamento em batelada para arquitetura orientada a eventos (Event-Driven Streaming).",
+    "Criação de loop de realimentação (Closed-Loop Feedback) monitorando a resposta do solo pós-irrigação.",
+    "Otimização do tempo de decisão via Edge Computing no ESP32 para cortes emergenciais de irrigação."
+  ]
+}

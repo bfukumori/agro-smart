@@ -1,0 +1,24 @@
+services:
+  agrosmart:
+    container_name: agrosmart-platform
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agrosmart
+    restart: unless-stopped
+    ports:
+      - "${AGROSMART_PORT:-8080}:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8080/"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    environment:
+      - PYTHONUNBUFFERED=1
+      - AGROSMART_ENV=production
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
