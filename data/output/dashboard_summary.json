@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T21:52:45.388551Z",
+  "generated_at": "2026-11-08T21:54:28.511756Z",
   "source": "Simulação IoT AgroSmart",
   "total_readings": 144,
   "active_plots": 3,
@@ -2217,17 +2217,17 @@
   },
   "health": {
     "status": "HEALTHY",
-    "timestamp": "2026-10-30T21:50:57.195238Z",
+    "timestamp": "2026-10-30T21:52:45.540311Z",
     "version": "1.0.0-fase7",
     "service": "agrosmart-core-engine",
-    "uptime_seconds": 1365618.59,
+    "uptime_seconds": 1365726.94,
     "kpis": {
       "total_readings_processed": 144,
       "data_quality_compliance_pct": 100.0,
       "active_alerts_count": 2,
       "rejected_records_count": 0,
-      "processing_latency_ms": 165.58,
-      "throughput_readings_per_sec": 869.65
+      "processing_latency_ms": 153.62,
+      "throughput_readings_per_sec": 937.39
     },
     "subsystems": {
       "iot_edge_gateway": {

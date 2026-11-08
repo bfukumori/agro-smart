@@ -13,9 +13,15 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt  # noqa: E402
+    HAS_MATPLOTLIB = True
+except ImportError:
+    matplotlib = None  # noqa: F401
+    plt = None
+    HAS_MATPLOTLIB = False
 
 ROOT = Path(__file__).resolve().parents[1]
 SILVER_PATH = ROOT / "data" / "processed" / "telemetry_processed.csv"
@@ -256,6 +262,10 @@ def analyze_process(event_log: list[dict]) -> dict:
 
 def plot_process_map(insights: dict, output_path: Path) -> None:
     """Gera visualização do Directly-Follows Graph (DFG) com gargalos destacados."""
+    if not HAS_MATPLOTLIB or plt is None:
+        print("[Process Mining] Matplotlib não disponível no ambiente. Diagramas estáticos pré-existentes mantidos.")
+        return
+
     fig, ax = plt.subplots(figsize=(13, 7.5), dpi=150)
     fig.patch.set_facecolor("#0F172A")
     ax.set_facecolor("#0F172A")
@@ -343,12 +353,13 @@ def run_process_mining() -> dict:
 
     plot_process_map(insights, DIAGRAM_PNG)
 
+    map_status = f"{DIAGRAM_PNG}" if HAS_MATPLOTLIB else "Diagrama estático mantido (headless)"
     print(
         f"[Process Mining] Concluído com sucesso:\n"
         f" - Event Log gravado: {EVENT_LOG_CSV} ({len(event_log)} eventos)\n"
         f" - Casos analisados: {insights['total_cases_analyzed']}\n"
         f" - Variantes mapeadas: {insights['distinct_variants']}\n"
-        f" - Mapa de processos gerado: {DIAGRAM_PNG}"
+        f" - Mapa de processos gerado: {map_status}"
     )
     return insights
 

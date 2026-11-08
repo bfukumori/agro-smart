@@ -1,16 +1,16 @@
 {
   "status": "HEALTHY",
-  "timestamp": "2026-10-30T21:52:45.540311Z",
+  "timestamp": "2026-11-08T21:54:28.795011Z",
   "version": "1.0.0-fase7",
   "service": "agrosmart-core-engine",
-  "uptime_seconds": 1365726.94,
+  "uptime_seconds": 167249.06,
   "kpis": {
     "total_readings_processed": 144,
     "data_quality_compliance_pct": 100.0,
     "active_alerts_count": 2,
     "rejected_records_count": 0,
-    "processing_latency_ms": 153.62,
-    "throughput_readings_per_sec": 937.39
+    "processing_latency_ms": 284.95,
+    "throughput_readings_per_sec": 505.35
   },
   "subsystems": {
     "iot_edge_gateway": {

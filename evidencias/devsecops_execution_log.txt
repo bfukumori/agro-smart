@@ -1,8 +1,8 @@
 =======================================================================
          RELATÓRIO DE EXECUÇÃO DO PIPELINE DEVSECOPS - AGROSMART       
 =======================================================================
-Data/Hora UTC: 2026-10-30T22:00:41.628730+00:00Z
-Duração da Execução: 1.10 segundos
+Data/Hora UTC: 2026-11-08T21:54:40.008138+00:00Z
+Duração da Execução: 1.03 segundos
 Resultado Geral: APROVADO (PASSED)
 =======================================================================
 
@@ -25,14 +25,14 @@ Log de Saída:
 [main]	INFO	profile exclude tests: None
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
-[main]	INFO	running on Python 3.13.16
-Run started:2026-10-30 22:00:42.267112+00:00
+[main]	INFO	running on Python 3.13.17
+Run started:2026-11-08 21:54:40.588945+00:00
 
 Test results:
 	No issues identified.
 
 Code scanned:
-	Total lines of code: 711
+	Total lines of code: 721
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 1
 
@@ -75,7 +75,7 @@ Comando: Auditoria de regras CIS Docker Benchmark
 Status: SUCESSO
 Log de Saída:
 --------------------------------------------------
-- Dockerfile: Encontrado (1017 bytes)
+- Dockerfile: Encontrado (989 bytes)
 - Usuário não-root (Least Privilege): APROVADO
 - Instrução HEALTHCHECK embutida: APROVADO
 - Docker Compose: Encontrado com limites de recursos: APROVADO

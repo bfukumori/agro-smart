@@ -57,3 +57,10 @@
 [2026-10-30T18:52:45.540Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=process_mining_updated total_cases=144 variants=5 avg_lead_time_ms=736.77
 [2026-10-30T18:52:45.540Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=healthcheck_updated status=HEALTHY latency_ms=153.62 throughput=937.39 rec/s
 [2026-10-30T18:52:45.540Z] [INFO] [component=AgroSmartMonitor] system=shutdown event=monitor_completed status=ALL_CHECKS_PASSED
+[2026-11-08T18:54:28.509Z] [INFO] [component=AgroSmartMonitor] system=bootstrap event=monitor_started mode=automated_continuous
+[2026-11-08T18:54:28.510Z] [INFO] [component=AgroSmartMonitor] cycle=1/1 event=cycle_initiated
+[2026-11-08T18:54:28.510Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=sensor_telemetry_generated total_records=144 source=IoT_ESP32_Simulator
+[2026-11-08T18:54:28.513Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=pipeline_completed records=144 open_alerts=2 rejected=0 status=QUALITY_VALIDATED
+[2026-11-08T18:54:28.794Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=process_mining_updated total_cases=144 variants=5 avg_lead_time_ms=736.77
+[2026-11-08T18:54:28.795Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=healthcheck_updated status=HEALTHY latency_ms=284.95 throughput=505.35 rec/s
+[2026-11-08T18:54:28.795Z] [INFO] [component=AgroSmartMonitor] system=shutdown event=monitor_completed status=ALL_CHECKS_PASSED

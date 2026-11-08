@@ -1,27 +1,27 @@
 =====================================================================
            EVIDÊNCIA DE EXECUÇÃO E MONITORAMENTO AGROSMART           
 =====================================================================
-Data/Hora: 2026-10-30T21:52:45.541072+00:00Z
+Data/Hora: 2026-11-08T21:54:28.795530+00:00Z
 Serviço: AgroSmart Autonomous IoT & Analytics Platform
 ---------------------------------------------------------------------
 
 1. REGISTRO DE CICLOS EXECUTADOS:
-[CICLO 1] Status: HEALTHY | Leituras: 144 | Alertas: 2 | Latência: 153.62 ms | Vazão: 937.39 rec/s
+[CICLO 1] Status: HEALTHY | Leituras: 144 | Alertas: 2 | Latência: 284.95 ms | Vazão: 505.35 rec/s
 
 2. INDICADORES DE OPERAÇÃO E SAÚDE DO SISTEMA (HEALTHCHECK):
 {
   "status": "HEALTHY",
-  "timestamp": "2026-10-30T21:52:45.540311Z",
+  "timestamp": "2026-11-08T21:54:28.795011Z",
   "version": "1.0.0-fase7",
   "service": "agrosmart-core-engine",
-  "uptime_seconds": 1365726.94,
+  "uptime_seconds": 167249.06,
   "kpis": {
     "total_readings_processed": 144,
     "data_quality_compliance_pct": 100.0,
     "active_alerts_count": 2,
     "rejected_records_count": 0,
-    "processing_latency_ms": 153.62,
-    "throughput_readings_per_sec": 937.39
+    "processing_latency_ms": 284.95,
+    "throughput_readings_per_sec": 505.35
   },
   "subsystems": {
     "iot_edge_gateway": {
@@ -47,13 +47,6 @@ Serviço: AgroSmart Autonomous IoT & Analytics Platform
 }
 
 3. LOGS DETALHADOS RECENTES:
-[2026-10-30T18:42:09.429Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=healthcheck_updated status=HEALTHY latency_ms=163.59 throughput=880.25 rec/s
-[2026-10-30T18:42:09.429Z] [INFO] [component=AgroSmartMonitor] system=shutdown event=monitor_completed status=ALL_CHECKS_PASSED
-[2026-10-30T18:44:32.668Z] [INFO] [component=AgroSmartMonitor] system=bootstrap event=monitor_started mode=automated_continuous
-[2026-10-30T18:44:32.668Z] [INFO] [component=AgroSmartMonitor] cycle=1/1 event=cycle_initiated
-[2026-10-30T18:44:32.669Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=sensor_telemetry_generated total_records=144 source=IoT_ESP32_Simulator
-[2026-10-30T18:44:32.671Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=pipeline_completed records=144 open_alerts=2 rejected=0 status=QUALITY_VALIDATED
-[2026-10-30T18:44:32.825Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=process_mining_updated total_cases=144 variants=5 avg_lead_time_ms=736.77
 [2026-10-30T18:44:32.826Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=healthcheck_updated status=HEALTHY latency_ms=157.43 throughput=914.71 rec/s
 [2026-10-30T18:44:32.826Z] [INFO] [component=AgroSmartMonitor] system=shutdown event=monitor_completed status=ALL_CHECKS_PASSED
 [2026-10-30T18:45:06.645Z] [INFO] [component=AgroSmartMonitor] system=bootstrap event=monitor_started mode=automated_continuous
@@ -77,4 +70,11 @@ Serviço: AgroSmart Autonomous IoT & Analytics Platform
 [2026-10-30T18:52:45.540Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=process_mining_updated total_cases=144 variants=5 avg_lead_time_ms=736.77
 [2026-10-30T18:52:45.540Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=healthcheck_updated status=HEALTHY latency_ms=153.62 throughput=937.39 rec/s
 [2026-10-30T18:52:45.540Z] [INFO] [component=AgroSmartMonitor] system=shutdown event=monitor_completed status=ALL_CHECKS_PASSED
+[2026-11-08T18:54:28.509Z] [INFO] [component=AgroSmartMonitor] system=bootstrap event=monitor_started mode=automated_continuous
+[2026-11-08T18:54:28.510Z] [INFO] [component=AgroSmartMonitor] cycle=1/1 event=cycle_initiated
+[2026-11-08T18:54:28.510Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=sensor_telemetry_generated total_records=144 source=IoT_ESP32_Simulator
+[2026-11-08T18:54:28.513Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=pipeline_completed records=144 open_alerts=2 rejected=0 status=QUALITY_VALIDATED
+[2026-11-08T18:54:28.794Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=process_mining_updated total_cases=144 variants=5 avg_lead_time_ms=736.77
+[2026-11-08T18:54:28.795Z] [INFO] [component=AgroSmartMonitor] cycle=1 event=healthcheck_updated status=HEALTHY latency_ms=284.95 throughput=505.35 rec/s
+[2026-11-08T18:54:28.795Z] [INFO] [component=AgroSmartMonitor] system=shutdown event=monitor_completed status=ALL_CHECKS_PASSED
 =====================================================================
